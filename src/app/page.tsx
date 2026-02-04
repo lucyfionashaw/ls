@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full overflow-x-hidden">
+    <main className="flex flex-col items-center w-full overflow-x-hidden gap-12">
       <Navbar />
       <Hero />
       <LogoBar />

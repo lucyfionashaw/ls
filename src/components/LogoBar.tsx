@@ -1,39 +1,47 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 const logos = [
-  "Blackstone",
-  "IFC",
-  "BCG",
-  "United Nations",
-  "Harvard",
-  "Octopus",
+  { name: "Harvard Business School", src: "/images/logos/edu-1.svg" },
+  { name: "University of Melbourne", src: "/images/logos/edu-2.svg" },
+  { name: "Fulbright Scholar Program", src: "/images/logos/edu-3.svg" },
+  { name: "ExxonMobil", src: "/images/logos/work-1.svg" },
+  { name: "Blackstone", src: "/images/logos/work-2.svg" },
+  { name: "United Nations", src: "/images/logos/work-3.svg" },
 ];
+
+function LogoSet({ keyPrefix }: { keyPrefix: string }) {
+  return (
+    <>
+      {logos.map((logo) => (
+        <div
+          key={`${keyPrefix}-${logo.name}`}
+          className="flex items-center justify-center h-14 shrink-0"
+          style={{ paddingLeft: 48, paddingRight: 48 }}
+        >
+          <Image
+            src={logo.src}
+            alt={logo.name}
+            width={148}
+            height={56}
+            className="object-contain h-11 w-auto"
+          />
+        </div>
+      ))}
+    </>
+  );
+}
 
 export default function LogoBar() {
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="flex items-center justify-between gap-20 px-10 pt-20"
-    >
-      {logos.map((logo, i) => (
-        <motion.div
-          key={logo}
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: i * 0.1 }}
-          className="flex items-center justify-center h-14"
-        >
-          <span className="font-mono-main text-lg font-medium tracking-[-0.36px] text-[var(--color-muted)]">
-            {logo}
-          </span>
-        </motion.div>
-      ))}
-    </motion.section>
+    <section className="w-full overflow-hidden pt-20">
+      <div className="flex animate-scroll" style={{ width: "fit-content" }}>
+        <LogoSet keyPrefix="a" />
+        <LogoSet keyPrefix="b" />
+        <LogoSet keyPrefix="c" />
+        <LogoSet keyPrefix="d" />
+      </div>
+    </section>
   );
 }

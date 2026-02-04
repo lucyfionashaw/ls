@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Newsletter() {
   return (
     <section className="p-2 w-full">
-      <div className="bg-[var(--color-card-bg)] rounded-2xl p-10 w-full">
+      <div className="rounded-2xl p-10 w-full relative overflow-hidden">
         <div className="flex gap-16">
           {/* Left content */}
           <motion.div
@@ -34,7 +35,7 @@ export default function Newsletter() {
                 <motion.input
                   whileFocus={{ scale: 1.01 }}
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Your email"
                   className="flex-1 bg-white rounded-lg px-6 py-3.5 border border-[var(--color-border)] font-mono-main text-base outline-none focus:border-[var(--color-accent)] transition-colors"
                 />
                 <motion.button
@@ -52,14 +53,22 @@ export default function Newsletter() {
             </div>
           </motion.div>
 
-          {/* Right image */}
+          {/* Right image - overlapping top edge like the design */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-[300px] h-[400px] rounded-xl bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-card-bg)] shrink-0"
-          />
+            className="w-[300px] shrink-0 -mt-10 -mr-2"
+          >
+            <Image
+              src="/images/newsletter.jpg"
+              alt="Lucy Shaw"
+              width={300}
+              height={420}
+              className="w-full h-[420px] object-cover object-top rounded-xl"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

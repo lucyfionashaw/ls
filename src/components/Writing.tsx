@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const articles = [
   {
@@ -9,27 +10,32 @@ const articles = [
     date: "29 October 2025",
     title:
       "Labour must offer pride, not just employment, to former coal communities",
+    image: "/images/writing-2.png",
   },
   {
     publication: "The Fabian Society",
     date: "29 October 2025",
     title:
       "Cut to the quick - the government must invest more in short-term solutions to our energy crisis",
+    image: "/images/writing-3.png",
   },
   {
     publication: "The Financial Times",
     date: "29 October 2025",
     title: "Clouded Thinking on Business Class Passengers",
+    image: "/images/writing-4.png",
   },
   {
     publication: "The Economist",
     date: "29 October 2025",
     title: "Let Solar Shine",
+    image: "/images/writing-5.png",
   },
   {
     publication: "The Economist",
     date: "29 October 2025",
     title: "The Economist Letters: A Strict Immigration Policy",
+    image: "/images/writing-6.png",
   },
 ];
 
@@ -88,7 +94,7 @@ export default function Writing() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="flex flex-col gap-3 mt-8"
+          className="flex flex-col gap-0 mt-8"
         >
           {articles.map((article, i) => (
             <motion.article
@@ -99,10 +105,18 @@ export default function Writing() {
               viewport={{ once: true, margin: "-50px" }}
               variants={cardVariants}
               whileHover={{ x: 8, transition: { duration: 0.2 } }}
-              className="flex items-center gap-10 bg-[var(--color-card-bg)] rounded-xl px-10 py-9 border-t border-transparent hover:border-[var(--color-accent)]/20 transition-colors cursor-pointer"
+              className="flex items-center gap-10 rounded-xl py-9 border-t border-transparent hover:border-[var(--color-accent)]/20 transition-colors cursor-pointer"
             >
-              {/* Thumbnail placeholder */}
-              <div className="w-40 h-[100px] rounded-lg bg-[var(--color-dark)]/5 shrink-0" />
+              {/* Thumbnail */}
+              <div className="w-40 h-[100px] rounded-lg overflow-hidden shrink-0">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  width={160}
+                  height={100}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
               <div className="flex flex-col gap-4 flex-1">
                 <span className="font-mono-main text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
@@ -122,7 +136,7 @@ export default function Writing() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="flex items-center justify-center py-2 mt-4"
+        className="flex items-center py-2 mt-4"
       >
         <motion.a
           href="#"

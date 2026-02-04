@@ -8,7 +8,7 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex items-center justify-between px-4 py-4 mx-2 border-b border-[var(--color-dark)]/10 w-full"
+      className="flex items-center justify-between px-4 py-4 mx-2 w-full"
     >
       <span className="text-xl font-bold tracking-[-0.4px] leading-none">
         Lucy Shaw
