@@ -159,23 +159,23 @@ const services = [
 
 export default function GordonManagementV2() {
   return (
-    <section className="w-full px-6">
-      <div className="bg-[var(--color-body)] px-6 pt-28 pb-24 w-full">
+    <section className="w-full px-4 md:px-6">
+      <div className="bg-[var(--color-body)] px-4 md:px-6 pt-16 md:pt-28 pb-12 md:pb-24 w-full">
         {/* Heading */}
-        <div className="px-8 text-center">
+        <div className="px-4 md:px-8 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="font-plantin text-[80px] font-normal leading-none tracking-[-1.6px] text-[var(--color-card-bg)]"
+            className="font-plantin text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-none tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-card-bg)]"
           >
             How I help clients win
           </motion.h2>
         </div>
 
-        {/* Service cards - horizontal scrolling */}
-        <div className="flex gap-0 pb-4 mt-16">
+        {/* Service cards - grid on mobile, row on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 pb-4 mt-10 md:mt-16">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -187,13 +187,13 @@ export default function GordonManagementV2() {
                 y: -8,
                 transition: { duration: 0.3, ease: "easeOut" },
               }}
-              className="flex flex-col justify-between flex-1 h-[440px] p-8 pb-8 pt-8 cursor-pointer"
+              className="flex flex-col justify-between h-[320px] md:h-[440px] p-4 md:p-8 cursor-pointer"
             >
-              <div className="flex flex-col gap-3">
-                <h3 className="font-plantin text-[28px] font-normal leading-[1.25] tracking-[-0.56px] text-[var(--color-card-bg)] whitespace-pre-line">
+              <div className="flex flex-col gap-2 md:gap-3">
+                <h3 className="font-plantin text-xl md:text-[28px] font-normal leading-[1.25] tracking-[-0.56px] text-[var(--color-card-bg)] whitespace-pre-line">
                   {service.title}
                 </h3>
-                <p className="font-helvetica text-lg font-normal leading-[1.25] tracking-[-0.36px] text-[var(--color-card-bg)]/50">
+                <p className="font-helvetica text-sm md:text-lg font-normal leading-[1.25] tracking-[-0.36px] text-[var(--color-card-bg)]/50">
                   {service.description}
                 </p>
               </div>
@@ -203,11 +203,11 @@ export default function GordonManagementV2() {
         </div>
 
         {/* Learn more link */}
-        <div className="flex items-center justify-center px-8 pt-12 pb-8">
+        <div className="flex items-center justify-center px-4 md:px-8 pt-8 md:pt-12 pb-4 md:pb-8">
           <motion.a
             href="#"
             whileHover={{ x: 4 }}
-            className="flex items-center gap-3 font-plantin text-2xl font-normal tracking-[-0.48px] text-[var(--color-card-bg)]"
+            className="flex items-center gap-3 font-plantin text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-card-bg)]"
           >
             Learn more at Gordon Management
             <span className="text-lg">→</span>
