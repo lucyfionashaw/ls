@@ -10,16 +10,18 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full overflow-x-hidden gap-12">
+    <main className="flex flex-col items-center w-full overflow-x-hidden">
       <Navbar />
       <Hero />
-      <LogoBar />
-      <About />
-      <Writing />
-      <GordonManagement />
-      <Book />
-      <Newsletter />
-      <Footer />
+      <div className="flex flex-col items-center w-full gap-12">
+        <LogoBar />
+        <About />
+        <Writing />
+        <GordonManagement />
+        <Book />
+        <Newsletter />
+        <Footer />
+      </div>
     </main>
   );
 }

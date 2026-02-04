@@ -44,7 +44,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-display text-[72px] font-normal leading-[1.25] tracking-[-1.44px] text-right text-[var(--color-dark)]"
+            className="font-meritocracy text-[72px] font-normal leading-[1.25] tracking-[-1.44px] text-right text-[var(--color-dark)]"
           >
             Lucy Shaw
           </motion.span>
