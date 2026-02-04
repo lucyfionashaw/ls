@@ -24,6 +24,26 @@ const saansMono = localFont({
   display: "swap",
 });
 
+const plantin = localFont({
+  src: [
+    { path: "../../public/fonts/plantin/PlantinMTProLight.woff2", weight: "300", style: "normal" },
+    { path: "../../public/fonts/plantin/PlantinMTProRg.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/plantin/PlantinMTProSmBd.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/plantin/PlantinMTProSmBd.woff2", weight: "600", style: "normal" },
+    { path: "../../public/fonts/plantin/PlantinMTProBold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-plantin",
+  display: "swap",
+});
+
+const meritocracy = localFont({
+  src: [
+    { path: "../../public/fonts/meritocracy/Meritocracy-Regular.woff2", weight: "400", style: "normal" },
+  ],
+  variable: "--font-meritocracy",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Lucy Shaw — Entrepreneur, Advisor & Investor",
   description:
@@ -38,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${saans.variable} ${saansMono.variable} font-sans-main antialiased bg-[var(--color-bg)] text-[var(--color-dark)]`}
+        className={`${saans.variable} ${saansMono.variable} ${plantin.variable} ${meritocracy.variable} font-sans-main antialiased bg-[var(--color-bg)] text-[var(--color-dark)]`}
       >
         {children}
       </body>
