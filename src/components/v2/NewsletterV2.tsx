@@ -29,16 +29,21 @@ export default function NewsletterV2() {
 
             {/* CTA button */}
             <div className="mt-10 md:mt-16">
-              <motion.a
+              <a
                 href="https://esgstuff.substack.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ opacity: 0.9 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-block bg-[var(--color-card-bg)] font-plantin text-base md:text-lg font-medium tracking-[-0.36px] text-[var(--color-body)] px-6 md:px-8 py-3 md:py-4"
+                className="group/btn relative inline-block font-plantin text-base md:text-lg font-medium tracking-[-0.36px] px-6 md:px-8 py-3 md:py-4 bg-[var(--color-card-bg)] text-[var(--color-body)] hover:bg-transparent hover:text-[var(--color-card-bg)] transition-colors duration-300 ease-in-out overflow-hidden"
               >
+                {/* Animated border that draws on hover */}
+                <span className="absolute inset-0 pointer-events-none">
+                  <span className="absolute top-0 left-0 h-[2px] w-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out group-hover/btn:w-full" />
+                  <span className="absolute top-0 right-0 w-[2px] h-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-150 group-hover/btn:h-full" />
+                  <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-300 group-hover/btn:w-full" style={{ direction: "rtl" }} />
+                  <span className="absolute bottom-0 left-0 w-[2px] h-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-[450ms] group-hover/btn:h-full" style={{ bottom: 0, top: "auto", transformOrigin: "bottom" }} />
+                </span>
                 Read Articles
-              </motion.a>
+              </a>
             </div>
           </motion.div>
 

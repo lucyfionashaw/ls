@@ -102,9 +102,9 @@ export default function SpeakingV2() {
         >
           <Link
             href="/talks"
-            className="font-plantin text-xl md:text-2xl font-medium tracking-[-0.48px] text-[var(--color-accent)] hover:opacity-70 transition-opacity"
+            className="group/cta font-plantin text-xl md:text-2xl font-medium tracking-[-0.48px] text-[var(--color-accent)] transition-all"
           >
-            View all →
+            View all <span className="inline-block transition-transform duration-300 group-hover/cta:translate-x-2">→</span>
           </Link>
         </motion.div>
       </div>

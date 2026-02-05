@@ -133,27 +133,27 @@ const services = [
   {
     title: "Fundraising\nSupport",
     description:
-      "Strategic fundraising advisory for energy and infrastructure companies seeking institutional capital.",
+      "Helping energy and infrastructure companies find the right institutional investors and close capital raises.",
   },
   {
     title: "Investment Due Diligence",
     description:
-      "Deep-dive analysis for investors evaluating energy transition assets across UK and African markets.",
+      "Research and analysis for investors looking at energy transition assets in the UK and Africa.",
   },
   {
     title: "Strategic Market Analysis",
     description:
-      "Bespoke research on energy policy, regulatory shifts, and market dynamics for investment committees.",
+      "Making sense of energy policy, regulation, and market shifts so investors can act with confidence.",
   },
   {
     title: "Investor\nConvening",
     description:
-      "Curated introductions connecting capital allocators with best-in-class energy transition opportunities.",
+      "Bringing the right people together — connecting capital with the best energy transition opportunities.",
   },
   {
     title: "Policy Advisory",
     description:
-      "Government advisory on energy investment frameworks and strategies to attract private capital.",
+      "Working with governments on energy investment frameworks that attract private capital.",
   },
 ];
 
@@ -170,7 +170,7 @@ export default function GordonManagementV2() {
             transition={{ duration: 0.6 }}
             className="font-plantin text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-none tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-card-bg)]"
           >
-            How I help clients win
+            What I do
           </motion.h2>
         </div>
 
@@ -205,12 +205,21 @@ export default function GordonManagementV2() {
         {/* Learn more link */}
         <div className="flex items-center justify-center px-4 md:px-8 pt-8 md:pt-12 pb-4 md:pb-8">
           <motion.a
-            href="#"
-            whileHover={{ x: 4 }}
+            href="https://www.gordonmgmt.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ gap: "16px" }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
             className="flex items-center gap-3 font-plantin text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-card-bg)]"
           >
             Learn more at Gordon Management
-            <span className="text-lg">→</span>
+            <motion.span
+              className="text-lg inline-block"
+              whileHover={{ x: 6 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            >
+              →
+            </motion.span>
           </motion.a>
         </div>
       </div>

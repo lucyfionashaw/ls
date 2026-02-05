@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const links = [
-  { label: "Newsletter", href: "#newsletter" },
-  { label: "LinkedIn", href: "#" },
-  { label: "X.com", href: "#" },
-  { label: "Instagram", href: "#" },
+  { label: "Newsletter", href: "https://esgstuff.substack.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/lucyfionashaw" },
+  { label: "X.com", href: "http://x.com/lucyfshaw" },
+  { label: "Instagram", href: "http://instagram.com/lucyfshaw" },
 ];
 
 const letterVariants = {
@@ -79,6 +79,8 @@ export default function FooterV2() {
             <motion.a
               key={link.label}
               href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
