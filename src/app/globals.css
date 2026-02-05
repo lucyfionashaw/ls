@@ -14,6 +14,14 @@
   --color-ellipse: #d5bfc6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 @layer base {
   html, body {
     height: 100%;

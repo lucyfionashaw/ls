@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import RollText from "./RollText";
 
 const events = [
   {
@@ -39,7 +40,7 @@ const events = [
 
 export default function SpeakingV2() {
   return (
-    <section className="flex flex-col xl:flex-row xl:justify-center pb-24 md:pb-52 px-4 md:px-8 w-full overflow-hidden">
+    <section className="flex flex-col xl:flex-row xl:justify-center pb-24 md:pb-52 px-4 md:px-8 w-full">
       {/* Left heading — sticky on desktop */}
       <div className="xl:flex-1 pt-8 xl:pt-12 pb-10 md:pb-12 xl:pb-[120px]">
         <div className="xl:sticky xl:top-0 xl:pt-10 xl:pb-10">
@@ -98,13 +99,13 @@ export default function SpeakingV2() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex items-center justify-end pt-8"
+          className="flex items-center justify-start pt-8"
         >
           <Link
             href="/talks"
             className="group/link font-plantin text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors"
           >
-            View all <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">→</span>
+            <RollText text="View all" />{" "}<span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
           </Link>
         </motion.div>
       </div>

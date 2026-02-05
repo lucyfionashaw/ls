@@ -53,7 +53,7 @@ export default function NewsletterV2() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full md:w-[300px] h-[300px] md:h-auto shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
+            className="w-full md:w-[320px] h-[300px] md:h-auto shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
           >
             <div className="relative w-full h-full overflow-hidden">
               <Image
@@ -61,7 +61,7 @@ export default function NewsletterV2() {
                 alt="Lucy Shaw"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 300px"
+                sizes="(max-width: 768px) 100vw, 320px"
               />
             </div>
           </motion.div>

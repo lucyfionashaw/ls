@@ -28,7 +28,7 @@ function AnimatedHeroTitle() {
   ];
 
   return (
-    <div ref={ref} className="flex items-center gap-4 md:gap-10 -mb-[0.15em]">
+    <div ref={ref} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 md:gap-10 -mb-[0.15em]">
       {words.map((word, wi) => (
         <span
           key={wi}
@@ -59,7 +59,7 @@ function AnimatedHeroTitle() {
 
 export default function HeroV2() {
   return (
-    <section className="flex flex-col pt-10 md:pt-14 px-4 md:px-6 pb-4 md:pb-6 w-full">
+    <section className="flex flex-col pt-10 md:pt-14 px-4 md:px-6 pb-4 md:pb-6 w-full overflow-hidden">
       {/* Top row: name + subtitle */}
       <div className="flex flex-col md:flex-row md:items-end justify-between w-full mb-4">
         <AnimatedHeroTitle />
