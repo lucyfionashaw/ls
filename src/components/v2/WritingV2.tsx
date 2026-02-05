@@ -107,9 +107,9 @@ export default function WritingV2() {
         >
           <Link
             href="/writing"
-            className="group/cta font-plantin text-xl md:text-2xl font-medium tracking-[-0.48px] text-[var(--color-accent)] transition-all"
+            className="group/link font-plantin text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors"
           >
-            View all <span className="inline-block transition-transform duration-300 group-hover/cta:translate-x-2">→</span>
+            View all <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">→</span>
           </Link>
         </motion.div>
       </div>

@@ -8,6 +8,7 @@ const links = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/lucyfionashaw" },
   { label: "X.com", href: "http://x.com/lucyfshaw" },
   { label: "Instagram", href: "http://instagram.com/lucyfshaw" },
+  { label: "Contact", href: "mailto:lucyfionashaw@gmail.com" },
 ];
 
 const letterVariants = {
@@ -79,16 +80,15 @@ export default function FooterV2() {
             <motion.a
               key={link.label}
               href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              whileHover={{ x: 4 }}
-              className="font-plantin text-base md:text-xl font-normal tracking-[-0.4px] text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
+              className="group/link font-plantin text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors"
             >
-              {link.label}
+              {link.label} <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">→</span>
             </motion.a>
           ))}
         </motion.div>
