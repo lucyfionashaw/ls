@@ -47,7 +47,7 @@ export default function BookV2() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="font-helvetica text-lg md:text-2xl font-normal leading-[1.4] tracking-[-0.24px] text-[var(--color-text-primary)] flex-1 whitespace-pre-line"
+          className="font-helvetica text-lg md:text-xl font-normal leading-[1.4] tracking-[-0.24px] text-[var(--color-text-primary)] flex-1 whitespace-pre-line"
         >
           While some regard coal as a relic of the industrial revolution, it has never been more important to powering our modern economy. Coal powers 34% of the world&apos;s electricity, more than any other fuel, and global demand keeps breaking new records. Despite the break-neck pace of renewable energy installations, coal remains the bedrock of energy systems from Asia to North America to Africa.
           {"\n\n"}

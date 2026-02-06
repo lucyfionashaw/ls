@@ -83,7 +83,7 @@ export default function SpeakingV2() {
               <h3 className="font-plantin text-xl md:text-[28px] font-normal leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
                 {event.title}
               </h3>
-              <span className="font-helvetica text-sm md:text-lg font-normal tracking-[-0.36px] leading-[1.4] text-[var(--color-dark)]">
+              <span className="font-helvetica text-sm md:text-lg font-normal tracking-[-0.36px] leading-[1.4] text-[var(--color-dark)]/50">
                 {event.venue}
               </span>
             </div>
