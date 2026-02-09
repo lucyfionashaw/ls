@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function BookV2() {
   return (
-    <section className="flex flex-col items-center gap-10 md:gap-16 pb-24 md:pb-52 px-4 md:px-6 w-full">
+    <section id="book" className="flex flex-col items-center gap-10 md:gap-16 pb-24 md:pb-52 px-4 md:px-6 w-full">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -14,11 +14,11 @@ export default function BookV2() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center gap-6 md:gap-10"
       >
-        <span className="font-helvetica text-base md:text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
+        <span className="font-sans-main text-base md:text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
           The book
         </span>
-        <h2 className="font-plantin text-[48px] sm:text-[56px] md:text-[64px] lg:text-[80px] font-normal leading-none tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-body)] text-center">
-          Slow Burn: how to quit coal
+        <h2 className="font-sans-main text-[48px] sm:text-[56px] md:text-[64px] lg:text-[80px] font-semibold leading-none tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-body)] text-center">
+          Slow Burn: why we can&apos;t quit coal
         </h2>
       </motion.div>
 
@@ -47,7 +47,7 @@ export default function BookV2() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="font-helvetica text-lg md:text-xl font-normal leading-[1.4] tracking-[-0.24px] text-[var(--color-text-primary)] flex-1 whitespace-pre-line"
+          className="font-sans-main text-lg md:text-xl font-normal leading-[1.4] tracking-[-0.24px] text-[var(--color-text-primary)] flex-1 whitespace-pre-line"
         >
           While some regard coal as a relic of the industrial revolution, it has never been more important to powering our modern economy. Coal powers 34% of the world&apos;s electricity, more than any other fuel, and global demand keeps breaking new records. Despite the break-neck pace of renewable energy installations, coal remains the bedrock of energy systems from Asia to North America to Africa.
           {"\n\n"}

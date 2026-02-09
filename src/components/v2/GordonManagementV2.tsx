@@ -100,20 +100,20 @@ const services = [
       "Making sense of energy policy, regulation, and market shifts so investors can act with confidence.",
   },
   {
-    title: "Investor\nConvening",
+    title: "Convening",
     description:
-      "Bringing the right people together — connecting capital with the best energy transition opportunities.",
+      "Bringing the right people together — connecting capital, companies and policymakers to unlock energy transition opportunities.",
   },
   {
     title: "Policy Advisory",
     description:
-      "Working with governments on energy investment frameworks that attract private capital.",
+      "Working with governments on how to attract private capital to infrastructure investments.",
   },
 ];
 
 export default function GordonManagementV2() {
   return (
-    <section className="w-full px-4 md:px-6">
+    <section id="investing" className="w-full px-4 md:px-6">
       <div className="bg-[var(--color-body)] px-4 md:px-6 pt-16 md:pt-28 pb-12 md:pb-24 w-full">
         {/* Heading */}
         <div className="px-4 md:px-8 text-left md:text-center">
@@ -122,7 +122,7 @@ export default function GordonManagementV2() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="font-plantin text-[48px] sm:text-[56px] md:text-[64px] xl:text-[80px] font-normal leading-[1.1] tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-card-bg)]"
+            className="font-sans-main text-[48px] sm:text-[56px] md:text-[64px] xl:text-[80px] font-semibold leading-[1.1] tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-card-bg)]"
           >
             What I do
           </motion.h2>
@@ -145,10 +145,10 @@ export default function GordonManagementV2() {
             >
               <div className="shrink-0">{serviceIcons[i]}</div>
               <div className="flex flex-col gap-2 md:gap-3">
-                <h3 className="font-plantin text-xl md:text-[28px] font-normal leading-[1.25] tracking-[-0.56px] text-[var(--color-card-bg)] whitespace-pre-line">
+                <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-card-bg)] whitespace-pre-line">
                   {service.title}
                 </h3>
-                <p className="font-helvetica text-sm md:text-lg font-normal leading-[1.25] tracking-[-0.36px] text-[var(--color-card-bg)]/50">
+                <p className="font-sans-main text-sm md:text-lg font-normal leading-[1.25] tracking-[-0.36px] text-[var(--color-card-bg)]/50">
                   {service.description}
                 </p>
               </div>
@@ -162,7 +162,7 @@ export default function GordonManagementV2() {
             href="https://www.gordonmgmt.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group/link font-plantin text-[20px] font-medium tracking-[-0.4px] text-[var(--color-card-bg)] transition-colors"
+            className="group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-card-bg)] transition-colors"
           >
             <RollText text="Learn more" />{" "}
             <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">

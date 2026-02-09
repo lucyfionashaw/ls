@@ -21,14 +21,18 @@ export default function Home() {
       {/* Max-width constrained content */}
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
         <AboutV2 />
-        <WritingV2 />
       </div>
 
-      {/* Full-width Gordon Management */}
+      {/* Full-width What I Do (Gordon Management) — above Writing */}
       <GordonManagementV2 />
 
       {/* Full-width Clients carousel */}
       <ClientsV2 />
+
+      {/* Max-width constrained content */}
+      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
+        <WritingV2 />
+      </div>
 
       {/* Rest of content */}
       <main className="flex flex-col items-center w-full max-w-[1440px] mx-auto">

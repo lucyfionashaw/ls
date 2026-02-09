@@ -2,16 +2,16 @@
 
 :root {
   --color-bg: #FFF5F8;
-  --color-dark: #33272a;
-  --color-body: #3a0a19;
-  --color-text-primary: #50433B;
-  --color-accent: #9d1e44;
+  --color-dark: #2d2d2d;
+  --color-body: #3a3a3a;
+  --color-text-primary: #555555;
+  --color-accent: #666666;
   --color-card-bg: #fff5f8;
   --color-section-bg: #ffffff;
   --color-gray-bg: #ffffff;
-  --color-border: #e8e7e6;
+  --color-border: #e0e0e0;
   --color-muted: #8c8e8f;
-  --color-ellipse: #d5bfc6;
+  --color-ellipse: #b8b8b8;
 }
 
 html {

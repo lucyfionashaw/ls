@@ -5,11 +5,54 @@ import { useRef } from "react";
 import RollText from "./RollText";
 
 const links = [
-  { label: "Newsletter", href: "https://esgstuff.substack.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/lucyfionashaw" },
-  { label: "X.com", href: "http://x.com/lucyfshaw" },
-  { label: "Instagram", href: "http://instagram.com/lucyfshaw" },
-  { label: "Contact", href: "mailto:lucyfionashaw@gmail.com" },
+  {
+    label: "Newsletter",
+    href: "https://esgstuff.substack.com",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block align-middle mr-2">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="M22 7L13.03 12.7a1.94 1.94 0 01-2.06 0L2 7" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/lucyfionashaw",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="inline-block align-middle mr-2">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+  {
+    label: "X.com",
+    href: "http://x.com/lucyfshaw",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="inline-block align-middle mr-2">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "http://instagram.com/lucyfshaw",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block align-middle mr-2">
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="5" />
+        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: "Contact",
+    href: "mailto:lucyfionashaw@gmail.com",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block align-middle mr-2">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+      </svg>
+    ),
+  },
 ];
 
 const letterVariants = {
@@ -35,7 +78,7 @@ function AnimatedFooterTitle() {
   return (
     <span
       ref={ref}
-      className="font-plantin text-[96px] sm:text-[140px] md:text-[180px] lg:text-[270px] font-normal leading-[0.85] tracking-[-2px] md:tracking-[-5.4px] text-[var(--color-body)] -mb-[0.1em]"
+      className="font-sans-main text-[96px] sm:text-[140px] md:text-[180px] lg:text-[270px] font-semibold leading-[0.85] tracking-[-2px] md:tracking-[-5.4px] text-[var(--color-body)] -mb-[0.1em]"
     >
       {words.map((word, wi) => {
         if (word === " ") {
@@ -87,8 +130,9 @@ export default function FooterV2() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="group/link font-plantin text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors"
+              className="group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors flex items-center"
             >
+              {link.icon}
               <RollText text={link.label} />{" "}<span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
             </motion.a>
           ))}
@@ -99,7 +143,7 @@ export default function FooterV2() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="font-meritocracy text-[36px] sm:text-[48px] md:text-[72px] font-normal leading-none tracking-[-1.44px] text-right text-[var(--color-dark)]"
+          className="font-sans-main text-[36px] sm:text-[48px] md:text-[72px] font-semibold leading-none tracking-[-1.44px] text-right text-[var(--color-dark)]"
         >
           Lucy Shaw
         </motion.span>
@@ -114,9 +158,9 @@ export default function FooterV2() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="font-plantin text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] md:text-right whitespace-pre-line shrink-0"
+            className="font-sans-main text-lg md:text-2xl font-normal tracking-[-0.48px] text-[var(--color-dark)] md:text-right whitespace-pre-line shrink-0"
           >
-            {"Entrepreneur,\nAdvisor & Investor"}
+            {"Energy expert: investor,\nwriter, convenor, speaker"}
           </motion.p>
         </div>
       </div>

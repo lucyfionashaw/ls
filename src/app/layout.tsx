@@ -45,7 +45,7 @@ const meritocracy = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Lucy Shaw — Entrepreneur, Advisor & Investor",
+  title: "Lucy Shaw — Energy expert: investor, writer, convenor, speaker",
   description:
     "Lucy Shaw writes and talks about energy transition, climate investing, ESG, infrastructure, and more.",
 };

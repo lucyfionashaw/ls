@@ -228,7 +228,7 @@ export default function WritingPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-plantin text-[48px] sm:text-[72px] md:text-[96px] lg:text-[120px] font-normal leading-none tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)] mb-16 md:mb-24"
+          className="font-sans-main text-[48px] sm:text-[72px] md:text-[96px] lg:text-[120px] font-semibold leading-none tracking-[-2px] md:tracking-[-4px] text-[var(--color-body)] mb-16 md:mb-24"
         >
           Writing
         </motion.h1>
@@ -247,10 +247,10 @@ export default function WritingPage() {
               className="group relative flex items-center gap-4 md:gap-10 py-6 md:py-9 cursor-pointer"
             >
               <div className="flex flex-col gap-2 md:gap-4 flex-1">
-                <h3 className="font-plantin text-xl md:text-[28px] font-normal leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
+                <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
                   {article.title}
                 </h3>
-                <span className="font-helvetica text-sm md:text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
+                <span className="font-sans-main text-sm md:text-lg font-normal tracking-[-0.36px] leading-none text-[var(--color-dark)]">
                   {article.publication} · {article.date}
                 </span>
               </div>

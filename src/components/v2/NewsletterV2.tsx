@@ -18,10 +18,10 @@ export default function NewsletterV2() {
           >
             {/* Title + subtitle at top */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h2 className="font-plantin text-[32px] sm:text-[48px] md:text-[64px] font-normal leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-card-bg)]">
+              <h2 className="font-sans-main text-[32px] sm:text-[48px] md:text-[64px] font-semibold leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-card-bg)]">
                 Slow Burn newsletter
               </h2>
-              <p className="font-helvetica text-base md:text-[18px] font-normal leading-[1.5] tracking-[-0.18px] text-[var(--color-card-bg)]/70 max-w-[540px]">
+              <p className="font-sans-main text-base md:text-[18px] font-normal leading-[1.5] tracking-[-0.18px] text-[var(--color-card-bg)]/70 max-w-[540px]">
                 Unpacking the progress and pitfalls of the energy transition -
                 investment, politics, and power in the UK and globally.
               </p>
@@ -30,10 +30,10 @@ export default function NewsletterV2() {
             {/* CTA button */}
             <div className="mt-10 md:mt-16">
               <a
-                href="https://esgstuff.substack.com/"
+                href="https://esgstuff.substack.com/subscribe"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn relative inline-block font-plantin text-base md:text-lg font-medium tracking-[-0.36px] px-6 md:px-8 py-3 md:py-4 bg-[var(--color-card-bg)] text-[var(--color-body)] hover:bg-transparent hover:text-[var(--color-card-bg)] transition-colors duration-300 ease-in-out overflow-hidden"
+                className="group/btn relative inline-block font-sans-main text-base md:text-lg font-medium tracking-[-0.36px] px-6 md:px-8 py-3 md:py-4 bg-[var(--color-card-bg)] text-[var(--color-body)] hover:bg-transparent hover:text-[var(--color-card-bg)] transition-colors duration-300 ease-in-out overflow-hidden"
               >
                 {/* Animated border that draws on hover */}
                 <span className="absolute inset-0 pointer-events-none">
@@ -42,7 +42,7 @@ export default function NewsletterV2() {
                   <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-300 group-hover/btn:w-full" style={{ direction: "rtl" }} />
                   <span className="absolute bottom-0 left-0 w-[2px] h-0 bg-[var(--color-card-bg)] transition-all duration-300 ease-in-out delay-[450ms] group-hover/btn:h-full" style={{ bottom: 0, top: "auto", transformOrigin: "bottom" }} />
                 </span>
-                Read Articles
+                Subscribe
               </a>
             </div>
           </motion.div>

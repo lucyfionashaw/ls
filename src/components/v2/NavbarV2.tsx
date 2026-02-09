@@ -6,9 +6,11 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Investing", href: "#investing" },
   { label: "Writing", href: "/writing" },
-  { label: "Talks", href: "/talks" },
-  { label: "Newsletter", href: "https://esgstuff.substack.com", external: true },
+  { label: "Speaking", href: "/talks" },
+  { label: "Book", href: "#book" },
+  { label: "Contact", href: "mailto:lucyfionashaw@gmail.com" },
 ];
 
 function NavLink({
@@ -51,7 +53,7 @@ export default function NavbarV2() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass =
-    "font-plantin text-base font-normal leading-none tracking-[-0.32px] text-[var(--color-dark)] hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all";
+    "font-sans-main text-base font-normal leading-none tracking-[-0.32px] text-[var(--color-dark)] hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all";
 
   return (
     <motion.nav
@@ -62,7 +64,7 @@ export default function NavbarV2() {
     >
       <Link
         href="/"
-        className="font-plantin text-lg md:text-xl font-bold leading-none tracking-[-0.4px] text-[var(--color-dark)]"
+        className="font-sans-main text-lg md:text-xl font-bold leading-none tracking-[-0.4px] text-[var(--color-dark)]"
       >
         Lucy Shaw
       </Link>
@@ -107,7 +109,7 @@ export default function NavbarV2() {
                 <NavLink
                   key={item.label}
                   item={item}
-                  className="font-plantin text-base font-normal tracking-[-0.32px] text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
+                  className="font-sans-main text-base font-normal tracking-[-0.32px] text-[var(--color-dark)] hover:text-[var(--color-accent)] transition-colors"
                   onClick={() => setMenuOpen(false)}
                 />
               ))}

@@ -3,12 +3,17 @@
 import Image from "next/image";
 
 const logos = [
-  { name: "Harvard Business School", src: "/logos/edu-1.svg" },
-  { name: "IFC", src: "/logos/edu-2.svg" },
-  { name: "BCG", src: "/logos/edu-3.svg" },
   { name: "Blackstone", src: "/logos/work-1.svg" },
-  { name: "United Nations", src: "/logos/work-2.svg" },
-  { name: "McKinsey", src: "/logos/work-3.svg" },
+  { name: "IFC", src: "/logos/edu-2.svg" },
+  { name: "Actis", src: "/images/logos/actis.png" },
+  { name: "Harvard Business School", src: "/logos/edu-1.svg" },
+  { name: "BCG", src: "/logos/edu-3.svg" },
+  { name: "Harvard Kennedy School", src: "/logos/hks.svg" },
+  { name: "CrossBoundary", src: "/logos/crossboundary.svg" },
+  { name: "Agricultural Transformation Agency", src: "/logos/ata.svg" },
+  { name: "UN WFP", src: "/logos/unwfp.svg" },
+  { name: "Vena Energy", src: "/logos/vena-energy.svg" },
+  { name: "Harvard Center for International Development", src: "/logos/harvard-cid.svg" },
 ];
 
 export default function LogoBarV2() {

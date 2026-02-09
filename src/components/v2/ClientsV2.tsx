@@ -4,9 +4,11 @@ import Image from "next/image";
 
 const clients = [
   { name: "Client 1", src: "/logos/client-1.svg" },
-  { name: "Client 2", src: "/logos/client-2.svg" },
-  { name: "Client 3", src: "/logos/client-3.svg" },
+  { name: "Octopus Energy Generation", src: "/images/logos/octopus.png" },
+  { name: "Denham", src: "/images/logos/denham.png" },
   { name: "Client 4", src: "/logos/client-4.svg" },
+  { name: "CrossBoundary", src: "/logos/crossboundary-client.svg" },
+  { name: "SALT", src: "/logos/salt.svg" },
 ];
 
 export default function ClientsV2() {
