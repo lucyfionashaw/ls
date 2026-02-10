@@ -87,10 +87,7 @@ export default function SpeakingV2() {
                 {event.venue}
               </span>
             </div>
-            {/* Border line */}
-            <span className="absolute bottom-0 left-0 w-full h-px bg-[var(--color-dark)]" />
-            {/* Animated accent line on hover */}
-            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[var(--color-accent)] transition-all duration-500 ease-out group-hover:w-full" />
+{/* No border lines */}
           </motion.a>
         ))}
 

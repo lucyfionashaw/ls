@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function NewsletterV2() {
   return (
-    <section className="px-4 md:px-6 pb-12 md:pb-20 w-full">
-      <div className="bg-[var(--color-body)] overflow-hidden w-full">
+    <section className="p-2 pb-12 md:pb-20 w-full">
+      <div className="bg-[var(--color-body)] overflow-hidden w-full rounded-2xl">
         <div className="flex flex-col md:flex-row min-h-[400px] md:min-h-[520px]">
           {/* Left content */}
           <motion.div
@@ -55,7 +55,7 @@ export default function NewsletterV2() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full md:w-[320px] h-[300px] md:h-auto shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
           >
-            <div className="relative w-full h-full overflow-hidden">
+            <div className="relative w-full h-full overflow-hidden rounded-xl">
               <Image
                 src="/images/newsletter-portrait.jpg"
                 alt="Lucy Shaw"

@@ -49,7 +49,8 @@ const links = [
     href: "mailto:lucyfionashaw@gmail.com",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block align-middle mr-2">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="M22 7L13.03 12.7a1.94 1.94 0 01-2.06 0L2 7" />
       </svg>
     ),
   },
@@ -85,7 +86,7 @@ function AnimatedFooterTitle() {
           return <span key={`space-${wi}`}>&nbsp;</span>;
         }
         return (
-          <span key={wi} className="inline-flex overflow-hidden pt-[0.15em] -mt-[0.15em]">
+          <span key={wi} className="inline-flex overflow-hidden py-[0.2em] -my-[0.2em]">
             {word.split("").map((char) => {
               const idx = charIndex++;
               return (
@@ -143,7 +144,7 @@ export default function FooterV2() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="font-sans-main text-[36px] sm:text-[48px] md:text-[72px] font-semibold leading-none tracking-[-1.44px] text-right text-[var(--color-dark)]"
+          className="font-meritocracy text-[36px] sm:text-[48px] md:text-[72px] font-normal leading-none tracking-[-1.44px] text-right text-[var(--color-dark)]"
         >
           Lucy Shaw
         </motion.span>
