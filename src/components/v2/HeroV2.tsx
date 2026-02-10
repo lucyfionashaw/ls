@@ -59,7 +59,7 @@ function AnimatedHeroTitle() {
 
 export default function HeroV2() {
   return (
-    <section className="relative w-full p-2 overflow-hidden">
+    <section className="relative w-full p-4 overflow-hidden">
       {/* Hero image — with padding and border radius */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
@@ -78,7 +78,7 @@ export default function HeroV2() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 rounded-2xl" />
 
         {/* Text overlay — positioned on top of the image */}
-        <div className="absolute inset-0 flex flex-col justify-end px-4 md:px-6 pb-8 md:pb-12">
+        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-10 pb-8 md:pb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between w-full">
             <AnimatedHeroTitle />
             <motion.p

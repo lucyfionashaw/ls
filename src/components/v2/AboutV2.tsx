@@ -24,7 +24,7 @@ export default function AboutV2() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative w-full md:w-[560px] h-[400px] sm:h-[500px] md:h-[747px] shrink-0 overflow-hidden rounded-2xl"
+          className="relative w-full md:w-[480px] h-[60vw] sm:h-[50vw] md:h-[600px] shrink-0 overflow-hidden rounded-2xl"
         >
           <Image
             src="/images/about-v2.jpg"

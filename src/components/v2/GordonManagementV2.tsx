@@ -113,7 +113,7 @@ const services = [
 
 export default function GordonManagementV2() {
   return (
-    <section id="investing" className="w-full p-2">
+    <section id="investing" className="w-full p-4">
       <div className="bg-[var(--color-body)] px-4 md:px-10 pt-16 md:pt-28 pb-12 md:pb-24 w-full rounded-2xl">
         {/* Heading */}
         <div className="px-4 md:px-8 text-left md:text-center">
