@@ -422,11 +422,11 @@ export default function SpeakingV2() {
                 key={tab.value}
                 onClick={() => setFilter(tab.value)}
                 className={`
-                  font-sans-main text-sm md:text-base font-medium tracking-[-0.32px] px-4 py-2 rounded-lg transition-colors duration-200
+                  font-sans-main text-[14px] md:text-[16px] font-medium tracking-[-0.32px] leading-none px-5 py-2.5 md:px-6 md:py-3 rounded-full border transition-colors duration-200
                   ${
                     filter === tab.value
-                      ? "bg-[var(--color-body)] text-[var(--color-card-bg)]"
-                      : "text-[var(--color-dark)]/50 hover:text-[var(--color-dark)]"
+                      ? "bg-[var(--color-body)] text-[var(--color-card-bg)] border-[var(--color-body)]"
+                      : "text-[var(--color-dark)]/50 border-[var(--color-dark)]/20 hover:text-[var(--color-dark)] hover:border-[var(--color-dark)]/40"
                   }
                 `}
               >

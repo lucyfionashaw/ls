@@ -151,7 +151,7 @@ export default function FooterV2() {
 
       {/* Bottom section: large name + subtitle */}
       <div className="flex flex-col md:flex-row justify-between md:items-end px-0 py-4 md:p-6 pt-6 md:pt-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-8 md:gap-4">
           <AnimatedFooterTitle />
           <motion.p
             initial={{ opacity: 0 }}

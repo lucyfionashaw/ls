@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const logos = [
   { name: "Blackstone", src: "/logos/blackstone.svg", className: "" },
-  { name: "IFC", src: "/logos/ifc.svg", className: "!h-7 md:!h-11" },
+  { name: "IFC", src: "/logos/ifc.svg", className: "!h-6 md:!h-9" },
   { name: "Actis", src: "/images/logos/actis.png", className: "" },
   { name: "Harvard Business School", src: "/logos/edu-1.svg", className: "" },
-  { name: "BCG", src: "/logos/bcg.svg", className: "!h-7 md:!h-11" },
-  { name: "Harvard Kennedy School", src: "/logos/hks-logo.svg", className: "!h-7 md:!h-11" },
+  { name: "BCG", src: "/logos/bcg.svg", className: "!h-6 md:!h-9" },
+  { name: "Harvard Kennedy School", src: "/logos/hks-logo.svg", className: "!h-6 md:!h-9" },
   { name: "CrossBoundary", src: "/logos/crossboundary-logo.svg", className: "" },
   { name: "Agricultural Transformation Agency", src: "/logos/ata-logo.png", className: "" },
-  { name: "UN WFP", src: "/logos/unwfp-logo.svg", className: "" },
+  { name: "UN WFP", src: "/logos/wfp-logo.svg", className: "!h-12 md:!h-16 rounded" },
   { name: "Vena Energy", src: "/logos/vena-group.png", className: "" },
   { name: "Harvard Center for International Development", src: "/logos/harvard-cid-logo.svg", className: "" },
 ];

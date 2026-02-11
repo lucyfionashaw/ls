@@ -11,7 +11,7 @@ const clients = [
 
 export default function ClientsV2() {
   return (
-    <section className="w-full overflow-hidden pb-24 md:pb-52">
+    <section className="w-full overflow-hidden py-16 md:py-24">
       <div className="flex animate-scroll w-max">
         {clients.map((client) => (
           <div

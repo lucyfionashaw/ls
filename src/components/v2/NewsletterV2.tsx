@@ -15,7 +15,7 @@ export default function NewsletterV2() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col justify-between flex-1 px-6 md:px-12 pt-10 md:pt-14 pb-8 md:pb-10"
+            className="flex flex-col justify-between flex-1 px-6 md:px-12 pt-8 md:pt-14 pb-8 md:pb-10"
           >
             {/* Title + subtitle at top */}
             <div className="flex flex-col gap-3 md:gap-4">
@@ -29,7 +29,7 @@ export default function NewsletterV2() {
             </div>
 
             {/* CTA button */}
-            <div className="mt-10 md:mt-16">
+            <div className="mt-6 md:mt-16">
               <a
                 href="https://esgstuff.substack.com/subscribe"
                 target="_blank"

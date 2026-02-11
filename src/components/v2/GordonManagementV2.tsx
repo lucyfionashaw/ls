@@ -1,15 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import RollText from "./RollText";
-
-const clients = [
-  { name: "Octopus Energy Generation", src: "/logos/oe-generation.svg", className: "" },
-  { name: "Denham Capital", src: "/logos/denham-capital.svg", className: "!h-7 md:!h-11" },
-  { name: "CrossBoundary", src: "/logos/crossboundary-dark.svg", className: "" },
-  { name: "SALT", src: "/logos/salt-logo.png", className: "!h-7 md:!h-11" },
-];
 
 function FundraisingIcon() {
   const t = { repeat: Infinity, repeatType: "loop" as const, repeatDelay: 3, ease: "easeInOut" as const };
@@ -181,39 +173,6 @@ export default function GordonManagementV2() {
           </a>
         </div>
 
-        {/* Client logos carousel */}
-        <div className="w-full overflow-hidden mt-16 md:mt-24">
-          <div className="flex animate-scroll w-max">
-            {clients.map((client) => (
-              <div
-                key={client.name}
-                className="flex items-center justify-center h-16 md:h-24 px-8 md:px-16 shrink-0"
-              >
-                <Image
-                  src={client.src}
-                  alt={client.name}
-                  width={148}
-                  height={64}
-                  className={`h-8 md:h-12 w-auto object-contain opacity-50 invert ${client.className}`}
-                />
-              </div>
-            ))}
-            {clients.map((client) => (
-              <div
-                key={`dup-${client.name}`}
-                className="flex items-center justify-center h-16 md:h-24 px-8 md:px-16 shrink-0"
-              >
-                <Image
-                  src={client.src}
-                  alt={client.name}
-                  width={148}
-                  height={64}
-                  className={`h-8 md:h-12 w-auto object-contain opacity-50 invert ${client.className}`}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
