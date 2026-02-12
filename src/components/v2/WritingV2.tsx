@@ -48,7 +48,7 @@ export default function WritingV2() {
     <section className="flex flex-col xl:flex-row xl:justify-center py-24 md:py-52 px-4 md:px-8 w-full">
       {/* Left heading — sticky on desktop */}
       <div className="xl:flex-1 pb-10 md:pb-12 xl:pb-0">
-        <div className="xl:sticky xl:top-0 xl:pt-10 xl:pb-10">
+        <div className="xl:sticky xl:top-16 xl:pt-10 xl:pb-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

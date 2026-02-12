@@ -64,7 +64,7 @@ export default function NavbarV2() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative flex items-center justify-between px-4 pt-4 pb-4 md:px-5 md:pt-5 md:pb-4 w-full"
+      className="sticky top-0 z-50 flex items-center justify-between px-4 pt-4 pb-4 md:px-5 md:pt-5 md:pb-4 w-full bg-[var(--color-card-bg)]/80 backdrop-blur-md"
     >
       <Link
         href="/"
