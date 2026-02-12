@@ -138,15 +138,6 @@ export default function FooterV2() {
           ))}
         </motion.div>
 
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="font-meritocracy text-[36px] sm:text-[48px] md:text-[72px] font-normal leading-none tracking-[-1.44px] text-right text-[var(--color-dark)]"
-        >
-          Lucy Shaw
-        </motion.span>
       </div>
 
       {/* Bottom section: large name + subtitle */}

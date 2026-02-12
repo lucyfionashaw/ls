@@ -5,7 +5,7 @@ import Image from "next/image";
 const logos = [
   { name: "Blackstone", src: "/logos/blackstone.svg", className: "" },
   { name: "IFC", src: "/logos/ifc.svg", className: "!h-6 md:!h-9" },
-  { name: "Actis", src: "/images/logos/actis.png", className: "" },
+  { name: "Actis", src: "/logos/actis-full.svg", className: "!h-8 md:!h-12" },
   { name: "Harvard Business School", src: "/logos/edu-1.svg", className: "" },
   { name: "BCG", src: "/logos/bcg.svg", className: "!h-6 md:!h-9" },
   { name: "Harvard Kennedy School", src: "/logos/hks-logo.svg", className: "!h-6 md:!h-9" },

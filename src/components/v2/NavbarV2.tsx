@@ -9,7 +9,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Investing", href: "#investing" },
   { label: "Writing", href: "/writing" },
-  { label: "Speaking", href: "/talks" },
+  { label: "Speaking", href: "#speaking" },
   { label: "Book", href: "#book" },
   { label: "Contact", href: "mailto:lucyfionashaw@gmail.com" },
 ];

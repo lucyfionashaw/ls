@@ -9,22 +9,22 @@ const articles = [
   {
     title: "Labour must offer pride, not just employment, to former coal communities",
     publication: "LabourList",
-    date: "November 2025",
+    date: "1 November 2025",
     image: "/images/writing-2.png",
     href: "https://labourlist.org/2025/11/coal-culture-green-jobs/",
   },
   {
     title: "Cut to the quick - the government must invest more in short-term solutions to our energy crisis",
     publication: "The Fabian Society",
-    date: "6 November 2025",
-    image: "/images/writing-3.png",
+    date: "29 October 2025",
+    image: "/images/writing-fabian.jpg",
     href: "https://fabians.org.uk/cut-to-the-quick/",
   },
   {
     title: "Clouded Thinking on Business Class Passengers",
     publication: "The Financial Times",
     date: "29 October 2025",
-    image: "/images/writing-4.png",
+    image: "/images/writing-ft-carbon.jpg",
     href: "https://www.ft.com/content/f7b2eae3-faf6-4a6c-9be1-2b7553934717",
   },
   {
@@ -45,9 +45,9 @@ const articles = [
 
 export default function WritingV2() {
   return (
-    <section className="flex flex-col xl:flex-row xl:justify-center pb-24 md:pb-52 px-4 md:px-8 w-full">
+    <section className="flex flex-col xl:flex-row xl:justify-center py-24 md:py-52 px-4 md:px-8 w-full">
       {/* Left heading — sticky on desktop */}
-      <div className="xl:flex-1 pt-8 xl:pt-12 pb-10 md:pb-12 xl:pb-[120px]">
+      <div className="xl:flex-1 pb-10 md:pb-12 xl:pb-0">
         <div className="xl:sticky xl:top-0 xl:pt-10 xl:pb-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}

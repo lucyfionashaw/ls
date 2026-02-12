@@ -20,11 +20,10 @@ export default function NewsletterV2() {
             {/* Title + subtitle at top */}
             <div className="flex flex-col gap-3 md:gap-4">
               <h2 className="font-sans-main text-[32px] sm:text-[48px] md:text-[64px] font-semibold leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-card-bg)]">
-                Slow Burn newsletter
+                Subscribe to Slow Burn
               </h2>
               <p className="font-sans-main text-base md:text-[18px] font-normal leading-[1.6] tracking-[-0.18px] text-[var(--color-card-bg)]/70 max-w-[540px]">
-                Unpacking the progress and pitfalls of the energy transition -
-                investment, politics, and power in the UK and globally.
+                Lucy unpacks the progress and pitfalls of the energy transition - investment, politics, and power in the UK and globally. Subscribe to receive weekly long-read analysis direct to your inbox.
               </p>
             </div>
 

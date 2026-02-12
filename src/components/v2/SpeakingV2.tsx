@@ -403,7 +403,7 @@ export default function SpeakingV2() {
 
   return (
     <>
-      <section className="pb-24 md:pb-52 px-4 md:px-8 w-full">
+      <section id="speaking" className="pb-24 md:pb-52 px-4 md:px-8 w-full scroll-mt-16">
         {/* Header row: title + filter tabs */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-12 md:mb-20">
           <motion.h2
