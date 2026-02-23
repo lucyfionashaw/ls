@@ -12,7 +12,7 @@ const clients: { name: string; src: string; className: string; style?: React.CSS
 
 export default function ClientsV2() {
   return (
-    <section className="w-full overflow-hidden py-16 md:py-24">
+    <section className="w-full overflow-hidden pt-4 md:pt-6 pb-16 md:pb-24">
       <h3 className="font-sans-main text-base md:text-lg font-medium tracking-[-0.36px] text-[var(--color-dark)]/60 text-center mb-6 md:mb-10">
         Client list includes
       </h3>

@@ -68,14 +68,14 @@ export default function HeroV2() {
         className="relative w-full h-[600px] sm:h-[650px] md:h-[700px] lg:h-[800px] rounded-2xl overflow-hidden"
       >
         <Image
-          src="/images/newsletter-portrait.jpg"
+          src="/images/hero-library.jpg"
           alt="Lucy Shaw"
           fill
           className="object-cover object-top"
           priority
         />
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 rounded-2xl" />
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl" />
 
         {/* Text overlay — positioned on top of the image */}
         <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-10 pb-8 md:pb-12">

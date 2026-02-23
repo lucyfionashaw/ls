@@ -45,74 +45,107 @@ const articles = [
 
 export default function WritingV2() {
   return (
-    <section className="flex flex-col xl:flex-row xl:justify-center py-24 md:py-52 px-4 md:px-8 w-full">
-      {/* Left heading — sticky on desktop */}
-      <div className="xl:flex-1 pb-10 md:pb-12 xl:pb-0">
-        <div className="xl:sticky xl:top-16 xl:pt-10 xl:pb-10">
-          <motion.h2
+    <section className="py-24 md:py-52 px-4 md:px-8 w-full">
+      <div className="bg-white rounded-2xl overflow-hidden">
+        {/* Header: matches Newsletter layout — text with padding, image edge-to-edge */}
+        <div className="flex flex-col md:flex-row min-h-[400px] md:min-h-[464px]">
+          {/* Left content */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="font-sans-main text-[48px] sm:text-[56px] md:text-[64px] xl:text-[80px] font-semibold leading-[1.1] tracking-[-0.8px] md:tracking-[-1.6px] text-[var(--color-body)]"
+            className="flex flex-col justify-between flex-1 px-6 md:px-12 pt-8 md:pt-14 pb-8 md:pb-10"
           >
-            Writing
-          </motion.h2>
-        </div>
-      </div>
-
-      {/* Articles list */}
-      <div className="flex flex-col w-full xl:w-[900px] xl:shrink-0">
-        {articles.map((article, i) => (
-          <motion.a
-            key={article.title}
-            href={article.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group relative flex items-center gap-4 md:gap-10 py-6 px-4 md:px-6 -mx-4 md:-mx-6 rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"
-          >
-            <div className="flex flex-col gap-3 md:gap-4 flex-1">
-              <span className="font-sans-main text-base md:text-lg font-semibold tracking-[-0.36px] leading-none text-[var(--color-body)]">
-                {article.publication}
-              </span>
-              <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
-                {article.title}
-              </h3>
-              <span className="font-sans-main text-sm md:text-base font-normal tracking-[-0.32px] leading-none text-[var(--color-dark)]/60">
-                {article.date}
-              </span>
+            <div className="flex flex-col gap-3 md:gap-4">
+              <h2 className="font-sans-main text-[32px] sm:text-[48px] md:text-[64px] font-semibold leading-none tracking-[-0.64px] md:tracking-[-1.28px] text-[var(--color-body)]">
+                Writing
+              </h2>
+              <p className="font-sans-main text-base md:text-[18px] font-normal leading-[1.6] tracking-[-0.18px] text-[var(--color-dark)]/70 max-w-[540px]">
+                Published articles and opinion pieces on energy, investment, and the transition.
+              </p>
             </div>
-            <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">
+          </motion.div>
+
+          {/* Right portrait image with spacing */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full md:w-[320px] h-[300px] md:h-auto shrink-0 p-4 pt-0 md:pt-4 md:pl-0"
+          >
+            <div className="relative w-full h-full overflow-hidden rounded-xl">
               <Image
-                src={article.image}
-                alt={article.title}
+                src="/images/writing-header.png"
+                alt="Writing"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 96px, 160px"
+                sizes="(max-width: 768px) 100vw, 320px"
               />
             </div>
-{/* No border lines */}
-          </motion.a>
-        ))}
+          </motion.div>
+        </div>
 
-        {/* View all */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex items-center justify-start pt-8"
-        >
-          <Link
-            href="/writing"
-            className="group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors"
+        {/* Articles list — px-4 matches image's p-4 so hover aligns with image edges */}
+        <div className="flex flex-col px-4 pb-8 md:pb-14">
+          {articles.map((article, i) => (
+            <motion.a
+              key={article.title}
+              href={article.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className={`group relative flex items-center gap-4 md:gap-10 py-6 px-2 md:px-8 rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gray-100 ${
+                i % 2 !== 0 ? "flex-row-reverse" : ""
+              }`}
+            >
+              <div className="flex flex-col gap-3 md:gap-4 flex-1">
+                <span className="font-sans-main text-base md:text-lg font-semibold tracking-[-0.36px] leading-none text-[var(--color-body)]">
+                  {article.publication}
+                </span>
+                <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
+                  {article.title}
+                </h3>
+                <span className="font-sans-main text-sm md:text-base font-normal tracking-[-0.32px] leading-none text-[var(--color-dark)]/60">
+                  {article.date}
+                </span>
+              </div>
+              <div className="w-24 h-16 md:w-40 md:h-[100px] shrink-0 relative overflow-hidden rounded-lg">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 96px, 160px"
+                />
+              </div>
+            </motion.a>
+          ))}
+
+          {/* View all */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-start pt-8 px-2 md:px-8"
           >
-            <RollText text="View all" />{" "}<span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-          </Link>
-        </motion.div>
+            <Link
+              href="/writing"
+              className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300"
+            >
+              <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-none text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+                <RollText text="View all" />
+              </span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+                <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ export default function NewsletterV2() {
   return (
     <section className="w-full p-4 pb-12 md:pb-20">
       <div className="bg-[var(--color-body)] overflow-hidden w-full rounded-2xl">
-        <div className="flex flex-col md:flex-row min-h-[400px] md:min-h-[520px]">
+        <div className="flex flex-col md:flex-row min-h-[400px] md:min-h-[464px]">
           {/* Left content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -55,7 +55,7 @@ export default function NewsletterV2() {
           >
             <div className="relative w-full h-full overflow-hidden rounded-xl">
               <Image
-                src="/images/newsletter-portrait.jpg"
+                src="/images/newsletter-portrait-new.png"
                 alt="Lucy Shaw"
                 fill
                 className="object-cover"

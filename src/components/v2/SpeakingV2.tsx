@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import RollText from "./RollText";
 
@@ -442,7 +443,7 @@ export default function SpeakingV2() {
           className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-x-6 md:gap-y-12"
         >
           <AnimatePresence mode="popLayout">
-            {filtered.map((event, i) => (
+            {filtered.slice(0, 6).map((event, i) => (
               <motion.div
                 key={event.title}
                 layout
@@ -459,6 +460,26 @@ export default function SpeakingV2() {
               </motion.div>
             ))}
           </AnimatePresence>
+        </motion.div>
+
+        {/* View all */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-start pt-10 md:pt-14"
+        >
+          <Link
+            href="/talks"
+            className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300"
+          >
+            <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-none text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+              <RollText text="View all" />
+            </span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
+              <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </motion.div>
       </section>
 
