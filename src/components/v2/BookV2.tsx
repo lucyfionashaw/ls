@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import RollText from "./RollText";
 
@@ -37,10 +38,13 @@ export default function BookV2() {
               transition={{ duration: 0.6, delay: 0.15 }}
               className="lg:hidden w-full max-w-[300px]"
             >
-              <img
+              <Image
                 src="/images/book-cover-v2.png"
                 alt="Slow Burn: Why We Can't Quit Coal by Lucy Shaw"
+                width={848}
+                height={1193}
                 className="w-full h-auto object-contain rounded-2xl"
+                sizes="(max-width: 1024px) 300px, 520px"
               />
             </motion.div>
 

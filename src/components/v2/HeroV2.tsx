@@ -73,6 +73,7 @@ export default function HeroV2() {
           fill
           className="object-cover object-top"
           priority
+          sizes="100vw"
         />
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl" />

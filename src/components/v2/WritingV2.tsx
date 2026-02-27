@@ -57,7 +57,7 @@ export default function WritingV2() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="xl:hidden w-full mb-4"
           >
-            <div className="relative w-full h-[300px] overflow-hidden rounded-xl">
+            <div className="relative w-full h-[300px] md:h-[560px] overflow-hidden rounded-xl">
               <Image
                 src="/images/writing-header-new.jpg"
                 alt="Writing"

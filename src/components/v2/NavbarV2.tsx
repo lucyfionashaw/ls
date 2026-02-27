@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import RollText from "./RollText";
 
@@ -124,10 +125,12 @@ function ContactModal({ onClose }: { onClose: () => void }) {
 
           {/* Right/Top: contact portrait */}
           <div className="w-full md:w-[340px] h-[400px] md:h-[480px] shrink-0 relative overflow-hidden">
-            <img
+            <Image
               src="/images/contact-portrait.jpg"
               alt="Lucy Shaw"
-              className="w-full h-full object-cover object-top"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 340px"
             />
           </div>
         </div>

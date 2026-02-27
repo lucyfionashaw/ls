@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import NavbarV2 from "@/components/v2/NavbarV2";
 import FooterV2 from "@/components/v2/FooterV2";
 
@@ -68,10 +69,13 @@ export default function BookPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-full max-w-[300px] lg:w-[460px] xl:w-[520px] lg:max-w-none shrink-0 px-6 pb-6 md:px-10 md:pb-10 lg:p-12 xl:p-14"
             >
-              <img
+              <Image
                 src="/images/book-cover-v2.png"
                 alt="Slow Burn: Why We Can't Quit Coal by Lucy Shaw"
+                width={848}
+                height={1193}
                 className="w-full h-auto object-contain rounded-2xl"
+                sizes="(max-width: 1024px) 300px, 520px"
               />
             </motion.div>
           </div>

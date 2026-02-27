@@ -48,6 +48,19 @@ export const metadata: Metadata = {
   title: "Lucy Shaw — Energy expert: investor, writer, convenor, speaker",
   description:
     "Lucy Shaw writes and talks about energy transition, climate investing, ESG, infrastructure, and more.",
+  openGraph: {
+    title: "Lucy Shaw — Energy expert: investor, writer, convenor, speaker",
+    description:
+      "Lucy Shaw writes and talks about energy transition, climate investing, ESG, infrastructure, and more.",
+    images: [{ url: "/images/opengraph.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lucy Shaw — Energy expert: investor, writer, convenor, speaker",
+    description:
+      "Lucy Shaw writes and talks about energy transition, climate investing, ESG, infrastructure, and more.",
+    images: ["/images/opengraph.jpg"],
+  },
 };
 
 export default function RootLayout({
