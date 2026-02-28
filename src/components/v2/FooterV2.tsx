@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import RollText from "./RollText";
+import { useContactModal } from "./ContactModalContext";
 
 const links = [
   {
@@ -45,7 +46,7 @@ const links = [
   },
   {
     label: "Contact",
-    href: "mailto:lucyfionashaw@gmail.com",
+    href: "#contact",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block align-middle mr-2">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -109,6 +110,8 @@ function AnimatedFooterTitle() {
 }
 
 export default function FooterV2() {
+  const { setContactOpen } = useContactModal();
+
   return (
     <section className="w-full p-4">
       {/* Large name */}
@@ -135,22 +138,47 @@ export default function FooterV2() {
           transition={{ duration: 0.5 }}
           className="flex flex-wrap items-center gap-4 xl:gap-10"
         >
-          {links.map((link, i) => (
-            <motion.a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-              rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="group/link font-sans-main text-[16px] md:text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors flex items-center"
-            >
-              {link.icon}
-              <RollText text={link.label} />{" "}<span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-            </motion.a>
-          ))}
+          {links.map((link, i) => {
+            const linkContent = (
+              <>
+                {link.icon}
+                <RollText text={link.label} />{" "}<span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block align-middle"><path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+              </>
+            );
+
+            // Contact link opens the modal instead of navigating
+            if (link.href === "#contact") {
+              return (
+                <motion.button
+                  key={link.label}
+                  onClick={() => setContactOpen(true)}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                  className="group/link font-sans-main text-[16px] md:text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors flex items-center cursor-pointer"
+                >
+                  {linkContent}
+                </motion.button>
+              );
+            }
+
+            return (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+                className="group/link font-sans-main text-[16px] md:text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors flex items-center"
+              >
+                {linkContent}
+              </motion.a>
+            );
+          })}
         </motion.div>
       </div>
     </section>

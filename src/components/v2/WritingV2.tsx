@@ -48,21 +48,22 @@ export default function WritingV2() {
     <section id="writing" className="scroll-mt-16 py-16 md:py-32 px-4 md:px-8 w-full">
       <div className="bg-white rounded-2xl overflow-hidden">
         {/* Title + articles row with image */}
-        <div className="flex flex-col xl:flex-row xl:gap-6 p-4 xl:p-6">
-          {/* Mobile image — shown above title on small screens */}
+        <div className="flex flex-col md:flex-row md:gap-6 p-4 md:p-6">
+          {/* Mobile image — shown above title on small screens only */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="xl:hidden w-full mb-4"
+            className="md:hidden w-full mb-4"
           >
-            <div className="relative w-full h-[300px] md:h-[560px] overflow-hidden rounded-xl">
+            <div className="w-full overflow-hidden rounded-xl">
               <Image
                 src="/images/writing-header-new.jpg"
                 alt="Writing"
-                fill
-                className="object-cover object-top"
+                width={6024}
+                height={7945}
+                className="w-full h-auto"
                 sizes="100vw"
               />
             </div>
@@ -125,20 +126,21 @@ export default function WritingV2() {
             </div>
           </div>
 
-          {/* Right column: image — desktop only */}
+          {/* Right column: image — tablet and up */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden xl:block w-[420px] shrink-0"
+            className="hidden md:block md:w-[280px] lg:w-[340px] xl:w-[420px] shrink-0"
           >
-            <div className="relative w-full h-full overflow-hidden rounded-xl">
+            <div className="w-full overflow-hidden rounded-xl">
               <Image
                 src="/images/writing-header-new.jpg"
                 alt="Writing"
-                fill
-                className="object-cover"
+                width={6024}
+                height={7945}
+                className="w-full h-auto"
                 sizes="420px"
               />
             </div>
@@ -165,30 +167,6 @@ export default function WritingV2() {
           </Link>
         </motion.div>
 
-        {/* Subscribe subsection */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8 px-2 md:px-14 pb-8 md:pb-14 pt-8 md:pt-10 mx-4 md:mx-0 border-t border-[var(--color-dark)]/10"
-        >
-          <h3 className="font-sans-main text-xl md:text-[28px] font-semibold leading-[1.25] tracking-[-0.56px] text-[var(--color-dark)]">
-            Subscribe to Slow Burn for regular updates
-          </h3>
-          <a
-            href="https://esgstuff.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group/link inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-[var(--color-dark)]/30 bg-transparent hover:bg-[var(--color-dark)] transition-colors duration-300 shrink-0 self-start md:self-auto"
-          >
-            <span className="font-sans-main text-[14px] md:text-[18px] font-medium tracking-[-0.36px] leading-[1.2] text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
-              <RollText text="Subscribe" />
-            </span>
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="md:w-4 md:h-4 text-[var(--color-dark)] group-hover/link:text-[var(--color-card-bg)] transition-colors duration-300">
-              <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

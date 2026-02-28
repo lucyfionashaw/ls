@@ -24,6 +24,9 @@ export default function Home() {
         <AboutV2 />
       </div>
 
+      {/* Newsletter — between About and What I Do */}
+      <NewsletterV2 />
+
       {/* What I Do (Gordon Management) — max-width constrained */}
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto pt-8 md:pt-16">
         <GordonManagementV2 />
@@ -36,6 +39,9 @@ export default function Home() {
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">
         <WritingV2 />
       </div>
+
+      {/* Newsletter — between Writing and Speaking */}
+      <NewsletterV2 />
 
       {/* Speaking — grid layout, max-width constrained */}
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto">

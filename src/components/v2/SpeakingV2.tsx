@@ -106,7 +106,7 @@ export const events: EventItem[] = [
   {
     title: "Section President Speech, HBS",
     venue: "Harvard Business School",
-    date: "2025",
+    date: "2021",
     topic: "Leadership and the energy transition",
     audience: "Harvard Business School community",
     description:
@@ -130,7 +130,7 @@ export const events: EventItem[] = [
   {
     title: "Earth Set — In Conversation: Julia Shaw",
     venue: "Earth Set",
-    date: "2026",
+    date: "2025",
     topic: "Dark psychology and its intersection with climate narratives",
     audience: "Earth Set community",
     description:
@@ -142,7 +142,7 @@ export const events: EventItem[] = [
   {
     title: "Operations Lecture, HBS First Years",
     venue: "Harvard Business School",
-    date: "2025",
+    date: "2019",
     topic: "Energy infrastructure operations",
     audience: "Harvard Business School first-year MBA students",
     description:

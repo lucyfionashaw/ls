@@ -2,9 +2,11 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import RollText from "./RollText";
+import { useContactModal } from "./ContactModalContext";
 
 const navLinks = [
   { label: "About", href: "/#about" },
@@ -21,6 +23,8 @@ function NavLink({
   item: { label: string; href: string };
   onClick?: () => void;
 }) {
+  const pathname = usePathname();
+  const router = useRouter();
   const className =
     "group/link font-sans-main text-[16px] font-medium leading-none tracking-[-0.4px] text-[var(--color-dark)] transition-colors";
 
@@ -35,19 +39,32 @@ function NavLink({
     </>
   );
 
-  // Hash links and mailto: scroll programmatically so mobile menu close doesn't interfere
-  if (item.href.startsWith("/#") || item.href.startsWith("mailto:")) {
+  // Hash links: scroll on homepage, navigate then scroll on other pages
+  if (item.href.startsWith("/#")) {
     const handleClick = (e: React.MouseEvent) => {
-      if (item.href.startsWith("/#")) {
-        e.preventDefault();
-        const id = item.href.replace("/#", "");
-        onClick?.();
-        // Delay scroll so mobile menu exit animation doesn't block it
+      e.preventDefault();
+      const id = item.href.replace("/#", "");
+      onClick?.();
+
+      if (pathname === "/") {
+        // Already on homepage — smooth scroll after menu close animation
         setTimeout(() => {
           document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         }, 300);
       } else {
-        onClick?.();
+        // Navigate to homepage, then scroll to section once it loads
+        router.push("/");
+        let attempts = 0;
+        const scrollAfterNav = () => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else if (attempts < 50) {
+            attempts++;
+            requestAnimationFrame(scrollAfterNav);
+          }
+        };
+        setTimeout(scrollAfterNav, 400);
       }
     };
     return (
@@ -141,7 +158,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
 
 export default function NavbarV2() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
+  const { contactOpen, setContactOpen } = useContactModal();
 
   return (
     <>

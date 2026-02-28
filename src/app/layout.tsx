@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Providers from "@/components/v2/Providers";
 import "./globals.css";
 
 const saans = localFont({
@@ -73,7 +74,7 @@ export default function RootLayout({
       <body
         className={`${saans.variable} ${saansMono.variable} ${plantin.variable} ${meritocracy.variable} font-sans-main antialiased bg-[var(--color-bg)] text-[var(--color-dark)]`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
