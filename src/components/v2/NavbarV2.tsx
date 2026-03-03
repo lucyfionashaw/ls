@@ -11,22 +11,25 @@ import { useContactModal } from "./ContactModalContext";
 const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Investing", href: "/#investing" },
-  { label: "Writing", href: "/#writing" },
-  { label: "Speaking", href: "/#speaking" },
-  { label: "Book", href: "/#book" },
+  { label: "Writing", href: "/#writing", subPageHref: "/writing" },
+  { label: "Speaking", href: "/#speaking", subPageHref: "/talks" },
+  { label: "Book", href: "/#book", subPageHref: "/book" },
 ];
 
 function NavLink({
   item,
   onClick,
 }: {
-  item: { label: string; href: string };
+  item: { label: string; href: string; subPageHref?: string };
   onClick?: () => void;
 }) {
   const pathname = usePathname();
   const router = useRouter();
-  const className =
+  const isOnSubPage = pathname !== "/";
+  const isActive = item.subPageHref && pathname === item.subPageHref;
+  const baseClassName =
     "group/link font-sans-main text-[16px] font-medium leading-none tracking-[-0.4px] text-[var(--color-dark)] transition-colors";
+  const className = baseClassName;
 
   const content = (
     <>
@@ -38,6 +41,15 @@ function NavLink({
       </span>
     </>
   );
+
+  // On sub-pages, link directly to other sub-pages instead of homepage anchors
+  if (isOnSubPage && item.subPageHref) {
+    return (
+      <Link href={item.subPageHref} className={className} onClick={onClick}>
+        {content}
+      </Link>
+    );
+  }
 
   // Hash links: scroll on homepage, navigate then scroll on other pages
   if (item.href.startsWith("/#")) {
@@ -109,7 +121,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -166,7 +178,7 @@ export default function NavbarV2() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="sticky top-0 z-50 flex items-center justify-between px-4 pt-4 pb-4 md:px-5 md:pt-5 md:pb-4 w-full bg-[var(--color-card-bg)]/80 backdrop-blur-md"
+        className={`sticky top-0 z-50 flex items-center justify-between px-4 pt-4 pb-4 md:px-5 md:pt-5 md:pb-4 w-full transition-colors duration-200 ${menuOpen ? "bg-[var(--color-card-bg)]" : "bg-[var(--color-card-bg)]/80 backdrop-blur-md"}`}
       >
         <Link
           href="/"
@@ -214,14 +226,14 @@ export default function NavbarV2() {
         {/* Mobile menu dropdown */}
         <AnimatePresence>
           {menuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="absolute top-full left-0 right-0 bg-[var(--color-card-bg)] z-50 overflow-hidden"
-            >
-              <div className="flex flex-col px-4 py-4 gap-4">
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className="absolute top-full left-0 right-0 bg-[var(--color-card-bg)] z-50 overflow-hidden"
+              >
+                <div className="flex flex-col px-4 py-4 gap-4">
                 {navLinks.map((item) => (
                   <NavLink
                     key={item.label}
@@ -244,10 +256,24 @@ export default function NavbarV2() {
                   </span>
                 </button>
               </div>
-            </motion.div>
+              </motion.div>
           )}
         </AnimatePresence>
       </motion.nav>
+
+      {/* Mobile menu overlay — outside nav to escape sticky stacking context */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 bg-black/10 backdrop-blur-[2px] z-40 md:hidden"
+            onClick={() => setMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
       {/* Contact modal */}
       <AnimatePresence>

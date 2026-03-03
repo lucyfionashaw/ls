@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import NewsletterCompactV2 from "./NewsletterCompactV2";
 
 export default function AboutV2() {
   return (
@@ -91,6 +92,9 @@ export default function AboutV2() {
           </p>
         </motion.div>
       </div>
+
+      {/* Compact newsletter — inside About section */}
+      <NewsletterCompactV2 />
     </section>
   );
 }
