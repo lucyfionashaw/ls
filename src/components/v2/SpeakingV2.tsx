@@ -16,9 +16,23 @@ export type EventItem = {
   image: string;
   href: string;
   category: "speaking" | "convening";
+  ctaText?: string;
 };
 
 export const events: EventItem[] = [
+  {
+    title: "E-FWD Interview 2026",
+    venue: "London, UK",
+    date: "2026",
+    topic: "The energy transition and getting to a world without coal",
+    audience: "Energy industry professionals and general public",
+    description:
+      "Profile interview with E-FWD, a DC Thomson news brand, exploring why the energy transition isn't happening the way most people think and what it will really take to get to a world without coal.",
+    image: "/images/talk-efwd.jpeg",
+    href: "https://www.youtube.com/watch?v=NnrZIixRa1o",
+    category: "speaking",
+    ctaText: "Watch interview on YouTube",
+  },
   {
     title: "SALT London 2025",
     venue: "London, UK",
@@ -45,7 +59,7 @@ export const events: EventItem[] = [
   },
   {
     title: "AusIMM Australia Mining Week",
-    venue: "Australia",
+    venue: "London, UK",
     date: "2025",
     topic: "Coal transition and critical minerals",
     audience: "Mining industry professionals and investors",
@@ -57,7 +71,7 @@ export const events: EventItem[] = [
   },
   {
     title: "Earth Set 2026 — The Coal Transition",
-    venue: "Earth Set",
+    venue: "London, UK",
     date: "2026",
     topic: "Why we can't quit coal and what comes next",
     audience: "Climate and energy policy community",
@@ -315,7 +329,7 @@ export function EventModal({
               rel="noopener noreferrer"
               className="group/link font-sans-main text-[20px] font-medium tracking-[-0.4px] text-[var(--color-dark)] transition-colors mt-2"
             >
-              <RollText text="View event" />{" "}
+              <RollText text={event.ctaText || "View event"} />{" "}
               <span className="inline-block opacity-0 -translate-x-2 transition-all duration-200 group-hover/link:opacity-100 group-hover/link:translate-x-0">
                 <svg
                   width="16"

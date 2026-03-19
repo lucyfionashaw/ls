@@ -72,6 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${saans.variable} ${saansMono.variable} ${plantin.variable} ${meritocracy.variable} font-sans-main antialiased bg-[var(--color-bg)] text-[var(--color-dark)]`}
       >
         <Providers>{children}</Providers>
